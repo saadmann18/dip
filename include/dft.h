@@ -61,7 +61,7 @@ namespace GET
 		void doFourierTransform(const Image<Complex> &original_image, Image<Complex> &fourier_image);
 
 		/**
-		 * zweidimensionale diskrete Fouriertransformation durchf�hren
+		 * perform two-dimensional discrete Fourier transformation
 		 *
 		 * @param original_image Input - image in position space
 		 * @param fourier_image  Output - image in Fourier space
@@ -199,7 +199,7 @@ namespace GET
 	};
 
 	/* ************************************************************************** */
-	/* *** Implementation of the templates and INLINE methods********************** */
+	/* *** Implementation of the templates and INLINE methods ******************* */
 	/* ************************************************************************** */
 
 	/* ************************************************************************** */

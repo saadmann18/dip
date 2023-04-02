@@ -7,9 +7,9 @@
 namespace GET
 {
 
-	/* endl wird aus dem Namespace std in den Namespace GET �bernommen */
+	/* endl is taken from the std namespace into the GET namespace */
 	using std::endl;
-	/* flush wird aus dem Namespace std in den Namespace GET �bernommen */
+	/* flush is taken from the std namespace into the GET namespace */
 	using std::flush;
 
 	/** Klasse um innerhalb der GETLib standardisierte Ausgaben zu realisieren.
