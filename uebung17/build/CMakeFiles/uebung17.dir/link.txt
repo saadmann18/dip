@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/uebung17.dir/src/uebung17.o -o uebung17   -L/home/saad/dip/lib  -Wl,-rpath,/home/saad/dip/lib -ldip -lgetcv -lgetqt 

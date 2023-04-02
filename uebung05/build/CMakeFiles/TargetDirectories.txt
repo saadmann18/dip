@@ -1,0 +1,3 @@
+/home/saad/dip/uebung05/build/CMakeFiles/uebung05.dir
+/home/saad/dip/uebung05/build/CMakeFiles/edit_cache.dir
+/home/saad/dip/uebung05/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/saad/dip/uebung04/build",
+  "command": "/usr/bin/g++  -I/home/saad/dip/include -g -o CMakeFiles/uebung04.dir/src/uebung04.cpp.o -c /home/saad/dip/uebung04/src/uebung04.cpp",
+  "file": "/home/saad/dip/uebung04/src/uebung04.cpp"
+}
+]

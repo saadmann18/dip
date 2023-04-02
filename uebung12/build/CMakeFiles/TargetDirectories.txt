@@ -1,0 +1,3 @@
+/upb/users/s/saadmann/profiles/unix/imt/dip/uebung12/build/CMakeFiles/rebuild_cache.dir
+/upb/users/s/saadmann/profiles/unix/imt/dip/uebung12/build/CMakeFiles/edit_cache.dir
+/upb/users/s/saadmann/profiles/unix/imt/dip/uebung12/build/CMakeFiles/uebung12.dir

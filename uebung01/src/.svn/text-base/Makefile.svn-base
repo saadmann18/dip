@@ -1,0 +1,24 @@
+EXERCIZE        = uebung01
+SOLUTION        = loesung01
+
+# siehe README, wie $(DIP) definiert wird
+DIP_PATH        = $(DIP)
+
+INCLUDES        = -I$(DIP_PATH)/include
+LIBRARIES       = -L$(DIP_PATH)/lib -ldip -lgetcv -lgetqt
+
+CC              = gcc
+CFLAGS          = -g -Wall $(INCLUDES)
+CXX             = gcc
+CXXFLAGS        = -g -Wall $(INCLUDES)
+LDFLAGS         = $(LIBRARIES)
+
+all:	$(EXERCIZE)
+
+complete: $(EXERCIZE) $(SOLUTION)
+
+tar:
+	tar -czf uebung01.tar.gz Makefile uebung01.cpp lena.bmp
+
+clean:
+	rm -f *.o core $(EXERCIZE) $(SOLUTION) uebung01.tar.gz

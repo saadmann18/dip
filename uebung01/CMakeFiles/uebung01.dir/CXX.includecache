@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/saad/Downloads/Sem-5/dip/uebung01/src/uebung01.cpp
+dip.h
+/home/saad/Downloads/Sem-5/dip/uebung01/src/dip.h
+

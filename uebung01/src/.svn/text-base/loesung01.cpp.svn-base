@@ -1,0 +1,42 @@
+#include "dip.h"
+
+int main (int argc, char** argv)
+{
+	/* ************************************ */
+	/* Uebung 01                            */
+	/* ************************************ */
+
+	/* ************************************ */
+	/* Eingabe                              */
+	/* ************************************ */
+
+	// Filename eingeben
+	string filename;
+	cout << "Filename: ";
+	cin >> filename;
+
+	// Objekt erzeugen
+	GrayImage image;
+
+	// Bild in Objekt laden
+	cout << "Lade File: " << filename << endl;
+	image.load(filename);
+
+	/* ************************************ */
+	/* Ausgabe                              */
+	/* ************************************ */
+
+	// Bildgroesse ausgeben
+	cout << "Breite: " << image.getHeight()
+	     << " Hoehe: " << image.getWidth() << endl;
+
+	// Bild anzeigen
+	image.show();
+
+	/* ************************************ */
+	/* Programmende                         */
+	/* ************************************ */
+
+	cout << "FINISHED.\n";
+	return 1;
+}

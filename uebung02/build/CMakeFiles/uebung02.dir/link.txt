@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/uebung02.dir/src/uebung02.cpp.o -o uebung02   -L/home/saad/dip/lib  -Wl,-rpath,/home/saad/dip/lib -ldip -lgetcv -lgetqt 

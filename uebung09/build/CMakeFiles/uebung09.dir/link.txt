@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 CMakeFiles/uebung09.dir/src/uebung09.cpp.o -o uebung09   -L/home/saad/dip/lib  -Wl,-rpath,/home/saad/dip/lib -ldip -lgetcv -lgetqt 

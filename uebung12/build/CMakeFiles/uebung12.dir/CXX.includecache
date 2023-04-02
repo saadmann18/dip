@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/upb/users/s/saadmann/profiles/unix/imt/dip/include/basetypes.h
+standardoutput.h
+/upb/users/s/saadmann/profiles/unix/imt/dip/include/standardoutput.h
+complex.h
+/upb/users/s/saadmann/profiles/unix/imt/dip/include/complex.h
+
+/upb/users/s/saadmann/profiles/unix/imt/dip/include/complex.h
+iostream
+-
+
+/upb/users/s/saadmann/profiles/unix/imt/dip/include/dip.h
+iostream
+-
+string
+-
+math.h
+-
+basetypes.h
+/upb/users/s/saadmann/profiles/unix/imt/dip/include/basetypes.h
+image.h
+/upb/users/s/saadmann/profiles/unix/imt/dip/include/image.h
+
+/upb/users/s/saadmann/profiles/unix/imt/dip/include/image.h
+basetypes.h
+/upb/users/s/saadmann/profiles/unix/imt/dip/include/basetypes.h
+
+/upb/users/s/saadmann/profiles/unix/imt/dip/include/standardoutput.h
+iostream
+-
+sstream
+-
+list
+-
+
+/upb/users/s/saadmann/profiles/unix/imt/dip/uebung12/src/uebung12.cpp
+dip.h
+/upb/users/s/saadmann/profiles/unix/imt/dip/uebung12/src/dip.h
+
