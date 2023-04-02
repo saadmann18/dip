@@ -1,6 +1,4 @@
-#ifndef __GET__VECTOR_FIELD_H
-#define __GET__VECTOR_FIELD_H
-
+#pragma once
 #include "image.h"
 #include "gvector.h"
 
@@ -12,75 +10,68 @@
 namespace GET
 {
 
-
-
 /**
- * Vector field.
+ * Representation of a vector field.
  * 
- * Das Vektorfeld muss zunächst als Objekt vom Typ VectorField 
- * erzeugt werden und danach können beliebig viele 
- * Ansichten (Objekte von ViewVectorField) dafür erzeugt werden.
+ * The vector field must first be created as an object of the VectorField type 
+ * and then any number of views (objects of ViewVectorField) can be created for it.
  * 
- * @see Dokumentation zu QT 3.0 unter Q3Canvas und Q3CanvasView
+ * @see QT 3.0 documentation on Q3Canvas and Q3CanvasView
  * 
  * @author Holger Täubig
- * @version FERTIG.
- * @note keine Quellen, aber Ideen/Hilfen aus der QT-Dokumentation verwendet
+ * @version COMPLETE.
+ * @note no sources, but uses ideas/help from the QT documentation
  */
+ 
 class VectorField: public Q3Canvas 
 {
     Q_OBJECT
 
   public:
 	/**
-	 * Konstruktor.
+	 * Constructor.
 	 * 
-	 * @param width Breite der Ausgabefläche
-	 * @param height Höhe der Ausgabefläche
-	 * @param subpixel Anzahl der Subpixel die pro Einheitslänge für die 
-	 * Darstellung der Pfeile genutzt werden sollen. #Achtung: Das Ausgabebild
-	 * wird um den Faktor subpixel größer als width x height.#
+	 * @param width Width of the output area
+	 * @param height Height of the output area
+	 * @param subpixel Number of subpixels per unit length to be used for displaying the arrows. 
+	 * #Caution: The output image will be subpixel larger than width x height.#
 	 */
 	VectorField( int width, int height, int subpixel = 10 );
 	
 	
 	/**
-	 * Daten setzen.
+	 * Set data.
 	 * 
-	 * Es werden nur an den Bildpunkten Pfeile eingezeichnet, an denen die 
-	 * Vektorlänge größer 0 ist.
+	 * Arrows are only drawn at the pixels where the vector length is greater than 0.
 	 * 
-	 * Wird als Größe der Pfeilspitze 0 übergeben, so wird diese für jeden einzelnen
-	 * Pfeil relativ zur Länge des Pfeils (25%) angepasst.
+	 * If 0 is passed as the size of the arrowhead, it will be adjusted for each 
+	 * individual arrow relative to the length of the arrow (25%).
 	 * 
-	 * @param data Bild mit den Vektoren (jeder Pixel ist vom Typ Point)
-	 * @param arrow_size Größe der Pfeilspitze in Subpixeln (0=an Pfeilgröße angepasst)
+	 * @param data Image with the vectors (each pixel is of type Point)
+	 * @param arrow_size Arrowhead size in subpixels (0=adapted to arrow size)
 	 */
 	void setData( const Image<Vector2D> &data, int arrow_size = 0 );
 
 	/**
-	 * Daten mit Stift pen, Füllung brush und Tiefe z setzen.
+	 * Set data with pen, fill brush and depth z.
 	 * 
-	 * Es werden nur an den Bildpunkten Pfeile eingezeichnet, an denen die 
-	 * Vektorlänge größer 0 ist.
+	 * Arrows are only drawn at the pixels where the vector length is greater than 0.
 	 * 
-	 * Wird als Größe der Pfeilspitze 0 übergeben, so wird diese für jeden einzelnen
-	 * Pfeil relativ zur Länge des Pfeils (25%) angepasst.
+	 * If 0 is passed as the size of the arrowhead, it will be adjusted for each individual arrow 
+	 * relative to the length of the arrow (25%).
 	 * 
-	 * @param data   Bild mit den Vektoren (jeder Pixel ist vom Typ Point)
-	 * @param pen    Stift (siehe QPen), mit dem die Daten gezeichnet werden
-	 * @param brush  Füllung (siehe QBrush), mit der die Daten gezeichnet werden
-	 * @param arrow_size Größe der Pfeilspitze in Subpixeln (0=an Pfeilgröße angepasst)
-	 * @param z      Tiefe (Dimension z) in der die Daten gezeichnet werden
+	 * @param data   Image with the vectors (each pixel is of type Point)
+	 * @param pen    Pen (see QPen) used to draw the data
+	 * @param brush  Fill (see QBrush) used to paint the data
+	 * @param arrow_size Arrowhead size in subpixels (0=adapted to arrow size)
+	 * @param z      Depth (z dimension) at which the data is plotted
 	 */
 	void setData( const Image<Vector2D> &data, QPen pen, QBrush brush = QBrush(Qt::SolidPattern), int arrow_size = 0, double z = 0.0 );
-
-
 
   private:
   
 	/**	
-	 * Anzahl der Subpixel die pro Einheitslänge für die Darstellung der Pfeile genutzt werden sollen. 
+	 * Number of subpixels to be used per unit length for displaying the arrows. 
 	 * 
 	 * @see VectorField()
 	 */
@@ -90,20 +81,20 @@ class VectorField: public Q3Canvas
 
 
 /**
- * Hilfsklasse: Q3CanvasItem zum zeichnen eines Pfeils.
+ * Helper class: Q3CanvasItem for drawing an arrow.
  * 
- * Die Darstellung dieses Q3CanvasItem besteht aus einer Linie
- * (abgeleitet von Q3CanvasLine) und einem gefüllten Dreieck
- * als Pfeilspitze (Element: Q3CanvasPolygon arrow).
+ * The representation of this Q3CanvasItem consists 
+ * of a line (derived from Q3CanvasLine) and a filled 
+ * triangle as an arrowhead (Element: Q3CanvasPolygon arrow).
  * 
- * Die Größe der Pfeilspitze ist relativ zur Länge des Pfeils (25%).
+ * The size of the arrowhead is relative to the length of the arrow (25%).
  * 	
- * @see Verwendet von VectorField bzw. ViewVectorField 
+ * @see Used by VectorField or ViewVectorField
  * @see Dokumentation zu QT 3.0 unter Q3Canvas und Q3CanvasView
  * 
  * @author Holger Täubig
- * @version FERTIG.
- * @note keine Quellen, aber Ideen/Hilfen aus der QT-Dokumentation verwendet
+ * @version COMPLETE.
+ * @note No sources, but uses ideas/help from the QT documentation
  */
 class CanvasItemArrow : public Q3CanvasLine
 {
@@ -113,12 +104,11 @@ class CanvasItemArrow : public Q3CanvasLine
 	
   public:
 	/**
-	 * Konstruktor.
+	 * Constructor.
 	 * 
-	 * Erzeugt einen  neuen Pfeil, dessen Anfangs- und Endpunkt aber noch
-	 * mitttels setPoints() gesetzt werden muss.
+	 * Creates a new arrow whose start and end points still have to be set using setPoints().
 	 * 
-	 * @param canvas Q3Canvas-Objekt, in das dieses Q3CanvasItem eingebunden werden soll
+	 * @param canvas Q3Canvas object, to wrap this Q3CanvasItem in
 	 */
 	inline CanvasItemArrow( Q3Canvas *canvas ) :
 		Q3CanvasLine( canvas )
@@ -128,27 +118,27 @@ class CanvasItemArrow : public Q3CanvasLine
 	};
 
 	/**
-	 * Setzt Anfangs- und Endpunkt des Pfeils.
-	 * Alle Koordinaten werden im Koordinatensystem des Q3Canvas-Objektes (VectorField)
-	 * angegeben, zu dem dieses Element gehört.
+	 * Sets the start and end point of the arrow.
+	 * All coordinates are specified in the coordinate system of the Q3 
+	 * Canvas object (Vector Field) to which this element belongs.
 	 *
-	 * @param x1 x-Koordinate des Anfangspunktes
-	 * @param y1 y-Koordinate des Anfangspunktes
-	 * @param x2 x-Koordinate des Endpunktes
-	 * @param y2 y-Koordinate des Endpunktes
+	 * @param x1 x-Coordinate of the starting point
+	 * @param y1 y-Coordinate of the starting point
+	 * @param x2 x-Coordinate of the end point
+	 * @param y2 y-Coordinate of the end point
 	 */
 	virtual void setPoints ( int x1, int y1, int x2, int y2 );	
 
 	/**
-	 * Überschriebene viruelle Methode, damit die Änderung für Linie und Pfeilspitze durchgeführt wird.
+	 * Overridden virtual method to apply the change to line and arrowhead.
 	 */
 	virtual void setBrush ( QBrush b );
 	/**
-	 * Überschriebene viruelle Methode, damit die Änderung für Linie und Pfeilspitze durchgeführt wird.
+	 * Overridden virtual method to apply the change to line and arrowhead.
 	 */
 	virtual void setPen ( QPen p );
 	/**
-	 * Überschriebene viruelle Methode, damit die Änderung für Linie und Pfeilspitze durchgeführt wird.
+	 * Overridden virtual method to apply the change to line and arrowhead.
 	 */
 	void setZ( double z );
 }; 
@@ -156,38 +146,37 @@ class CanvasItemArrow : public Q3CanvasLine
 
 
 /**
- * CanvasItemArrow mit einer Pfeilspitze fester Größe.
+ * CanvasItemArrow with a fixed size arrowhead.
  * 
- * Die Größe der Pfeilspitze wird dem Konstruktor übergeben. Die Spitze
- * hat dann unabhängig von der Länge des Pfeils diese Größe (in Pixeln).
+ * The size of the arrowhead is passed to the constructor. The tip is then this 
+ * size (in pixels) regardless of the length of the arrow.
  * 
  * @see CanvasItemArrow
- * @see Dokumentation zu QT 3.0 unter Q3Canvas und Q3CanvasView
+ * @see QT 3.0 documentation on Q3Canvas and Q3CanvasView
  * 
  * @author Holger Täubig
- * @version FERTIG.
- * @note keine Quellen, aber Ideen/Hilfen aus der QT-Dokumentation verwendet
+ * @version COMPLETE.
+ * @note No sources, but uses ideas/help from the QT documentation
  */
 class CanvasItemFixedArrow : public CanvasItemArrow
 {
   private:
 	/**
-	 * Größe der Pfeilspitze in Pixeln.
+	 * Arrowhead size in pixels.
 	 */
 	float m_arrow_size;
 	
   public:
 	/**
-	 * Konstruktor.
+	 * Constructor.
 	 * 
-	 * Erzeugt einen  neuen Pfeil, dessen Anfangs- und Endpunkt aber noch
-	 * mitttels setPoints() gesetzt werden muss.
+	 * Creates a new arrow whose start and end points still have to be set using setPoints().
 	 * 
-	 * Die Größe der Pfeilspitze wird dem Konstruktor übergeben. Die Spitze
-	 * hat dann unabhängig von der Länge des Pfeils diese Größe (in Pixeln).
+	 * The size of the arrowhead is passed to the constructor. The tip is then this size (in pixels) 
+	 * regardless of the length of the arrow.
 	 * 
-	 * @param canvas Q3Canvas-Objekt, in das dieses Q3CanvasItem eingebunden werden soll
-	 * @param arrow_size Größe der Pfeilspitze in Pixeln
+	 * @param canvas Q3Canvas-object, to wrap this Q3CanvasItem in
+	 * @param arrow_size Arrowhead size in pixels
 	 */
 	inline CanvasItemFixedArrow( Q3Canvas *canvas, int arrow_size ) :
 		CanvasItemArrow( canvas ),
@@ -197,22 +186,17 @@ class CanvasItemFixedArrow : public CanvasItemArrow
 
 
 	/**
-	 * Setzt Anfangs- und Endpunkt des Pfeils.
-	 * Alle Koordinaten werden im Koordinatensystem des Q3Canvas-Objektes (VectorField)
-	 * angegeben, zu dem dieses Element gehört.
+	 * Sets the start and end point of the arrow.
+	 * All coordinates are specified in the coordinate system of the Q3 Canvas 
+	 * object (Vector Field) to which this element belongs.
 	 *
-	 * @param x1 x-Koordinate des Anfangspunktes
-	 * @param y1 y-Koordinate des Anfangspunktes
-	 * @param x2 x-Koordinate des Endpunktes
-	 * @param y2 y-Koordinate des Endpunktes
+	 * @param x1 x-Coordinate of the starting point
+	 * @param y1 y-Coordinate of the starting point
+	 * @param x2 x-Coordinate of the end point
+	 * @param y2 y-Coordinate of the end point
 	 */
 	virtual void setPoints ( int x1, int y1, int x2, int y2 );	
 };
 	
-	
-	
 }
 
-
-
-#endif /*__GET__VECTOR_FIELD_H*/

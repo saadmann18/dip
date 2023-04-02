@@ -30,7 +30,7 @@ class ViewVectorField : public Q3CanvasView {
 
   public:
   
-	//Constructor.
+	// Constructor.
 
 	ViewVectorField( VectorField& vector_field, QWidget* parent=0, const char* name=0, WFlags f=0 );
 	
