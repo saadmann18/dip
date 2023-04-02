@@ -99,7 +99,7 @@ class VectorField: public Q3Canvas
 class CanvasItemArrow : public Q3CanvasLine
 {
   protected:
-	/** Q3CanvasItem zum Zeichnen der Pfeilspitze */
+	/** Q3CanvasItem for drawing the arrowhead */
 	Q3CanvasPolygon* arrow;
 	
   public:

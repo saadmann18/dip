@@ -1,6 +1,4 @@
-#ifndef __GET__TRANSPOSE_H
-#define __GET__TRANSPOSE_H
-
+#pragma once
 #include "image.h"
 #include "standardoutput.h"
 #include "gexception.h"
@@ -11,42 +9,42 @@ namespace GET
 
 
 /**
- * Transponiert ein Bild (Spiegelung an der Hauptachse)
+ * Transposes an image (reflection about the main axis)
  * 
  * @author Holger Täubig
- * @version FERTIG.
+ * @version COMPLETE.
  */
 class Transpose
 {
   public:
   	/**
-  	 * Transponiert das übergebene Bild.
-  	 * Eingabebild und transponiertes Ausgabebild befinden sich in zwei 
-  	 * unterschiedlichen Objekten.
+  	 * Transposes the given image.
+  	 * Input image and transposed output image are in two different objects.
   	 * 
-  	 * @param image Originalbild (Input)
-  	 * @param transpose transponiertes Bild (Output)
+  	 * @param image Original image (Input)
+  	 * @param transpose transposed image (Output)
   	 */
   	template<typename TYP> void doTranspose( const Image<TYP> &image, Image<TYP> &transpose );
 
   	/**
-  	 * Transponiert das übergebene quadratische Bild. 
-  	 * Die Operation wird innerhalb des übergebenen Bildes ausgeführt. D.h.
-  	 * das Ergebnis wird in das Originalbild zurückgeschrieben. 
+  	 * Transposes the given square image. 
+  	 * The operation is performed within the transferred image. This means 
+  	 * that the result is written back to the original image. 
   	 * 
-  	 * Diese Methode kann nur für quadratische Bilder verwendet werden. 
-  	 * Für nicht quadratische Bilder wird eine Exception erzeugt.
+  	 * This method can only be used for square images. 
+  	 * An exception is thrown for non-square images.
   	 * 
-  	 * @param image Originalbild bei Funktionsaufruf. Bei Verlassen der Funktion steht hier das transponierte Bild. 
+  	 * @param image Original image when calling the function. When you exit the function, 
+  	 * the transposed image is here. 
   	 */
   	template<typename TYP> void doTranspose( Image<TYP> &image );  	
 };
 
 
 
-/* ************************************************ */
-/* Transponieren quadratischer Bilder in einem Bild */
-/* ************************************************ */
+/* **************************************** */
+/* Transpose square images in an image*/
+/* **************************************** */
 template<typename TYP> 
 void Transpose::doTranspose( Image<TYP> &image )
 {
@@ -54,27 +52,27 @@ void Transpose::doTranspose( Image<TYP> &image )
 	TYP 	*data  = image.getData();
 	
 	//
-	// TEST: Transponieren in einem Bild nur fuer quadratische Bilder
+	// TEST: Transpose in an image for square images only
 	//
 	if ( width!=image.getHeight() )
 	{
-		// keine FEHLERKORREKTUR möglich
+		// no ERROR CORRECTION possible
 		throw GException(
 			"Transpose::doTranspose( Image<TYP> &image )",
-			"Bild ist nicht quadratisch"
+			"Image is not square"
 			);
 	};
 	
 	//
-	// Transponieren
+	// Transpose
 	//
-	TYP *x; 	// genutzt als Zeiger auf Pixel (x,nr)
-	TYP *y; 	// genutzt als Zeiger auf Pixel (nr,y)
+	TYP *x; 	// used as a pointer to pixels (x,nr)
+	TYP *y; 	// used as a pointer to pixels (nr,y)
 	for ( int nr=1; nr<width; ++nr )
 	{
 		x = data+1;
 		y = data+width;
-		data += width+1; 	// zum naechsten Diagonalelement vorruecken
+		data += width+1; 	// advance to the next diagonal element
 		
 		TYP tmp;
 		for ( int i=nr; i<width; ++i )
@@ -93,7 +91,7 @@ void Transpose::doTranspose( Image<TYP> &image )
 
 
 /* ************************************************** */
-/* transponieren beliebiger Bilder in ein Ausgabebild */
+/* Transpose any image into an output image */
 /* ************************************************** */
 template<typename TYP> 
 void Transpose::doTranspose( const Image<TYP> &image, Image<TYP> &transpose )
@@ -102,7 +100,7 @@ void Transpose::doTranspose( const Image<TYP> &image, Image<TYP> &transpose )
 	int height = image.getHeight();
 	
 	//
-	// Groesse anpassen
+	// Adjust size
 	//
 	if ( (height!=transpose.getWidth()) || (width!=transpose.getHeight()) )
 	{	
@@ -111,7 +109,7 @@ void Transpose::doTranspose( const Image<TYP> &image, Image<TYP> &transpose )
 	
 	
 	//
-	// Transponieren
+	// Transpose
 	//
 	TYP *src  = image.getData();
 	TYP *dest = transpose.getData();
@@ -124,9 +122,5 @@ void Transpose::doTranspose( const Image<TYP> &image, Image<TYP> &transpose )
 	}
 }
 
-
-
-
 } /* namespace GET */
 
-#endif /* __IMAGE_H */
