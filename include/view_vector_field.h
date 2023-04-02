@@ -1,5 +1,4 @@
-#ifndef __GET__VIEW_VECTOR_FIELD_H
-#define __GET__VIEW_VECTOR_FIELD_H
+#pragma once
 
 #include "vector_field.h"
 
@@ -108,6 +107,3 @@ class ViewVectorField : public Q3CanvasView {
 
 }
 
-
-
-#endif /*__GET__VIEW_VECTOR_FIELD_H*/
