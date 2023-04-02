@@ -15,7 +15,7 @@ namespace GET
 
 
 /**
- * Vektorfeld.
+ * Vector field.
  * 
  * Das Vektorfeld muss zunächst als Objekt vom Typ VectorField 
  * erzeugt werden und danach können beliebig viele 
