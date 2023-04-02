@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.22"
@@ -19,7 +19,7 @@
 					]
 				}
 			],
-			"name" : "",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "uebung01::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-uebung01-ae0f87e35fcfaec3418d.json",
+					"jsonFile" : "target-uebung01-Debug-f6fb4b715bff6afbeafb.json",
 					"name" : "uebung01",
 					"projectIndex" : 0
 				}

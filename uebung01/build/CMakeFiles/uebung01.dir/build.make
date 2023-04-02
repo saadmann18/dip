@@ -73,15 +73,15 @@ CMakeFiles/uebung01.dir/src/uebung01.cpp.o: CMakeFiles/uebung01.dir/flags.make
 CMakeFiles/uebung01.dir/src/uebung01.cpp.o: ../src/uebung01.cpp
 CMakeFiles/uebung01.dir/src/uebung01.cpp.o: CMakeFiles/uebung01.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/saad/dip/uebung01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/uebung01.dir/src/uebung01.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/uebung01.dir/src/uebung01.cpp.o -MF CMakeFiles/uebung01.dir/src/uebung01.cpp.o.d -o CMakeFiles/uebung01.dir/src/uebung01.cpp.o -c /home/saad/dip/uebung01/src/uebung01.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/uebung01.dir/src/uebung01.cpp.o -MF CMakeFiles/uebung01.dir/src/uebung01.cpp.o.d -o CMakeFiles/uebung01.dir/src/uebung01.cpp.o -c /home/saad/dip/uebung01/src/uebung01.cpp
 
 CMakeFiles/uebung01.dir/src/uebung01.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/uebung01.dir/src/uebung01.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/saad/dip/uebung01/src/uebung01.cpp > CMakeFiles/uebung01.dir/src/uebung01.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/saad/dip/uebung01/src/uebung01.cpp > CMakeFiles/uebung01.dir/src/uebung01.cpp.i
 
 CMakeFiles/uebung01.dir/src/uebung01.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/uebung01.dir/src/uebung01.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/saad/dip/uebung01/src/uebung01.cpp -o CMakeFiles/uebung01.dir/src/uebung01.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/saad/dip/uebung01/src/uebung01.cpp -o CMakeFiles/uebung01.dir/src/uebung01.cpp.s
 
 # Object files for target uebung01
 uebung01_OBJECTS = \

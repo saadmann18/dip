@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/uebung01.dir/src/uebung01.cpp.o -o uebung01   -L/home/saad/dip/lib  -Wl,-rpath,/home/saad/dip/lib -ldip -lgetcv -lgetqt 
+/usr/bin/g++ -g CMakeFiles/uebung01.dir/src/uebung01.cpp.o -o uebung01   -L/home/saad/dip/lib  -Wl,-rpath,/home/saad/dip/lib -ldip -lgetcv -lgetqt 
