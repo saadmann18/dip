@@ -1,6 +1,4 @@
-#ifndef __GET__GEXCEPTION_H
-#define __GET__GEXCEPTION_H
-
+#pragma once
 #include "standardoutput.h"
 
 
@@ -9,16 +7,15 @@ namespace GET
 
 
 /**
- * Basisklasse für alle Exceptions innerhalb der GETLib
+ * Base class for all exceptions within the GETLib
  * 
- * Diese Exception gibt Ort und Beschreibung des Fehlers
- * an der Standardfehlerausgabe aus. Außerdem ist ein geschützter
- * parameterloser Konstruktor vorhanden, der von abgeleiteten Exceptions
- * verwendet werden kann, um ein anderes Verhalten (z.B. ohne Fehlerausgabe)
- * zu erzeugen.
+ * This exception prints the location and description of the 
+ * error to the standard error output. There is also a protected 
+ * parameterless constructor that can be used by derived exceptions 
+ * to produce different behavior (e.g. without throwing an error)..
  * 
  * 
- * #Anwendungsbeispiel:# Vermeiden von Division durch Null
+ * #application example:# Avoiding division by zero
  * 
  * @code
  * class Image
@@ -32,48 +29,45 @@ namespace GET
  *    if (value==0.0)
  *    {
  *       throw GException( 
- *                "Image& Image::div(float value)",                   // Ort
- *                "Division durch 0 kann nicht durchgeführt werden."  // Beschreibung
+ *                "Image& Image::div(float value)",     // Location
+ *                "Division by 0 cannot be performed."  // Description
  *                );
  *    }
  *    else
  *    {
- *        // Division durchführen
+ *        // Division carry out
  *    }
  *    return *this;
  * };
  * @endcode
  * 
  * @author Holger Täubig
- * @version FERTIG.
- * @see Zum Erzeugen und Verarbeiten von Exceptions werden die Befehle #$throw$#, #$try$# und #$catch$#
- * verwendet. Informationen zur Benutzung dieser Befehle sind in den meisten C++ Büchern vorhanden.
+ * @version COMPLETE.
+ * @see The commands #$throw$#, #$try$# and #$catch$# are used to generate and handle exceptions. 
+ * Information on using these commands is available in most C++ books.
  * 
  */
 class GException
 {
 protected:
 	/**
-	 * Parameterloser Konstruktor für abgeleitete Klassen.
+	 * Parameterless constructor for derived classes.
 	 */
 	GException( );
 	
 public:
 	/**
-	 * Erzeugt Exception und gibt Ort und Beschreibung des Fehlers aus.
+	 * Raise an exception and print out the location and description of the error.
 	 * 
-	 * @param location Ort des Fehlers
-	 * @param error Fehlerbeschreibung
+	 * @param location location of the error
+	 * @param error Error Description
 	 */
 	GException( const char *location, const char *error);
 	
 	/**
-	 * Destruktor.
+	 * Destructor.
 	 */
 	virtual ~GException();
 };
 
-	
 }	// namespace
-
-#endif // __GET__GEXCEPTION_H
