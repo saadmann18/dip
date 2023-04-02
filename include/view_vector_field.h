@@ -13,43 +13,39 @@
 namespace GET
 {
 
-
-
 /**
- * Darstellung eines Vektorfeldes.
+ * Representation of a vector field.
  * 
- * Das Vektorfeld muss zunächst als Objekt vom Typ VectorField 
- * erzeugt werden und danach können beliebig viele 
- * Ansichten (Objekte von ViewVectorField) dafür erzeugt werden.
+ * The vector field must first be created as an object of the VectorField type 
+ * and then any number of views (objects of ViewVectorField) can be created for it.
  * 
- * @see Dokumentation zu QT 3.0 unter Q3Canvas und Q3CanvasView
+ * @see QT 3.0 documentation on Q3Canvas and Q3CanvasView
  * 
  * @author Holger Täubig
- * @version FERTIG.
- * @note keine Quellen, aber Ideen/Hilfen aus der QT-Dokumentation verwendet
+ * @version COMPLETE.
+ * @note no sources, but uses ideas/help from the QT documentation
  */
 class ViewVectorField : public Q3CanvasView {
     Q_OBJECT
 
   public:
   
-	/**
-	 * Konstruktor.
-	 */
+	//Constructor.
+
 	ViewVectorField( VectorField& vector_field, QWidget* parent=0, const char* name=0, WFlags f=0 );
 	
 	/**
-	 * Skaliert die Darstellung entsprechende der Faktoren in x- und y-Richtung.
+	 * Scales the display according to the factors in the x and y directions.
 	 * 
-	 * @param sx Skalierung in x-Richtung
-	 * @param sy Skalierung in y-Richtung
+	 * @param sx Scaling in x-direction
+	 * @param sy Scaling in y-direction
 	 */
 	void scale( double sx, double sy );
 
 	/**
-	 * Skaliert die Darstellung.
+	 * Scales the display.
 	 * 
-	 * @param s Skalierungsfaktor
+	 * @param s scaling factor
 	 * 
 	 * @see scale( double sx, double sy )
 	 */
@@ -61,11 +57,11 @@ class ViewVectorField : public Q3CanvasView {
 	
 	
 	/**
-	 * Einfache Anzeige für Vektorfelder.
+	 * Simple indicator for vector fields.
 	 *
-	 * @param vector_image Bild, das das Vektorfeld enthält.
+	 * @param vector_image Image, containing the vector field.
 	 * 
-	 * @todo Vernünftig überarbeiten und SimpleIOQtBase strukturieren.
+	 * @todo Revise sensibly and structure SimpleIOQtBase.
 	 */
 	static void simpleShow( const Image<Vector2D> &vector_image );
 	
@@ -73,37 +69,30 @@ class ViewVectorField : public Q3CanvasView {
   
   private:
   
-	/**
-	 * Referenz auf das zugehörige Vektorfeld.
-	 */
+	// Reference to the associated vector field.
+
 	VectorField& 	m_vector_field;
 
   protected:
   
-	/**
-	 * Komntextmenü für die rechte Maustaste.
-	 */
+	// Right mouse button context menu.
+
 	QPopupMenu menu;
 	
-	/**
-	 * Verarbeitung des Mausevents.
-	 */
+	//Processing of the mouse event.
+
 	virtual void mousePressEvent ( QMouseEvent * e );
 	
   private slots:
 
-	/**
-	 * Speichert den sichtbaren Bereich [SLOT]
-	 */
+	// Saves the visible area [SLOT]
+
 	void save();
 	
-	/**
-	 * Speichert das gesamt Bild (auch die nicht sichbaren Teile) [SLOT]
-	 */
+	// Saves the entire image (including the non-visible parts) [SLOT]
+
 	void saveAll();
 };
-
-
 
 }
 
