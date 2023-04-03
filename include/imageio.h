@@ -1,5 +1,4 @@
-#ifndef __GET__QT_IMAGE_IO_H
-#define __GET__QT_IMAGE_IO_H
+#pragma once
 
 #include <Qt3Support>	
 #include <QImage>
@@ -11,7 +10,6 @@
 namespace GET
 {
 	
-		
 
 #define JPG 0
 #define jpg 0
@@ -43,10 +41,10 @@ namespace GET
 
 
 /**
- * Laden und Speicher von Bilder mittels Qt
+ * Loading and saving of images using Qt
  * 
- * @todo vermutlich fehlt bei einigen saveImage Methoden:   io_name = io_name2;
- * @todo imageio.h von QTHEADER zu normalen Headern verschieben (Makefile.am)
+ * @todo probably missing from some saveImage methods:   io_name = io_name2;
+ * @todo Move imageio.h from QTHEADER to normal headers (Makefile.am)
  */
 class ImageIO
  
@@ -79,7 +77,6 @@ class ImageIO
        bool    openImage(Image<uchar>&);
        
        
-       
        void    set_image(const QImage&);
        void    set_image(const QImage&, Image<QRgb>&);
        void    set_image(const QImage&, Image<Rgb>&);
@@ -90,41 +87,39 @@ class ImageIO
        QImage get_image(){ return io_image;};
        
       
-       
-       
     private:
-       void                 switch_format(const QString&, int);
-       void                 do_save_w_format(int);
-       void                 do_save();
-       void                 do_open();
-       void                 add_format(const QString&, const QString&);
+       void     switch_format(const QString&, int);
+       void     do_save_w_format(int);
+       void     do_save();
+       void     do_open();
+       void     add_format(const QString&, const QString&);
        
-       void                 setData_qrgb(Image<QRgb>&);  
-       void                 getData_qrgb(Image<QRgb>&);
+       void     setData_qrgb(Image<QRgb>&);  
+       void     getData_qrgb(Image<QRgb>&);
        
-       void                 setData_rgb(Image<Rgb>&);  
-       void                 getData_rgb(Image<Rgb>&);
+       void     setData_rgb(Image<Rgb>&);  
+       void     getData_rgb(Image<Rgb>&);
        
-       void                 setData_uch(Image<uchar>&);  
-       void                 getData_uch(Image<uchar>&);
-       
-       
+       void     setData_uch(Image<uchar>&);  
+       void     getData_uch(Image<uchar>&);
        
        
-       QString           detectFormat(const QString&);
+       
+       
+       QString   detectFormat(const QString&);
               
-       QRgb              PixColor ;
-       QColor            Pcolor;
+       QRgb      PixColor ;
+       QColor    Pcolor;
         
-       int                    W;
-       int                    H;
-       int*                  data1;
-       bool                ok;
+       int       W;
+       int       H;
+       int*      data1;
+       bool      ok;
    
-       QString           types;
-       QString           io_types ;
-       QString           io_format ;
-       QString           io_name ;  
+       QString         types;
+       QString         io_types ;
+       QString         io_format ;
+       QString         io_name ;  
        QImage          io_image;
       
        
@@ -132,5 +127,4 @@ class ImageIO
 
 } /* namespace GET */
 
-#endif // __GET__QT_IMAGE_IO_H
 
