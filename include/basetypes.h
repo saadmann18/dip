@@ -1,6 +1,7 @@
 #pragma once
 
 #include "standardoutput.h"
+#include "complex.h"
 
 /**
  * Namespace of all classes of the GETLib - software library.
@@ -21,7 +22,7 @@ namespace GET
 	typedef unsigned char uchar;
 }
 
-#include "complex.h"
+
 
 namespace GET
 {
