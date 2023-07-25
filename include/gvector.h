@@ -1,5 +1,4 @@
-#ifndef __GET__VECTORS_H_
-#define __GET__VECTORS_H_
+#pragma once
 
 namespace GET 
 {
@@ -9,8 +8,8 @@ namespace GET
 /**
  * Zwiedimensionaler Vektor mit den Komponenten x und y.
  * 
- * @author Holger Täubig
- * @version unvollständig aber FUNKTIONSFÄHIG.
+ * @author Holger TÃ¤ubig
+ * @version unvollstÃ¤ndig aber FUNKTIONSFÃ„HIG.
  */	
 struct Vector2D
 {
@@ -32,8 +31,8 @@ inline Vector2D& operator*=(Vector2D& vec, const float& val )
 /**
  * Dreidimensionaler Vektor mit den Komponenten x, y und z.
  * 
- * @author Holger Täubig
- * @version unvollständig aber FUNKTIONSFÄHIG.
+ * @author Holger TÃ¤ubig
+ * @version unvollstÃ¤ndig aber FUNKTIONSFÃ„HIG.
  */	
 struct Vector3D 
 {
@@ -44,6 +43,4 @@ struct Vector3D
 
 
 
-}
-
-#endif /*VECTOR_H_*/
+} /*VECTOR_H_*/
