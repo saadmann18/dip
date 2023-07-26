@@ -3,18 +3,18 @@
 // ------------------------------------------------------------------------------
 void setPixel (GrayImage& input, int x, int y, float value)
 {
-	float* data      = input.getData();  // Zeiger auf Bilddaten
-	int    width    = input.getWidth(); // Bildbreite zur Berechnung des Pixelindex
+	float* data      = input.getData();  // Pointer to image data
+	int    width    = input.getWidth(); // Image width for calculating the pixel index
 
-	data[y*width+x] = value;            // Grauwert des Pixels aendern
+	data[y*width+x] = value;            // Change the gray value of the pixel
 }
 
 float getPixel (GrayImage& input, int x, int y)
 {
-	float* data      = input.getData();  // Zeiger auf Bilddaten
-	int    width    = input.getWidth(); // Bildbreite zur Berechnung des Pixelindex
+	float* data      = input.getData();  // Pointer to image data
+	int    width    = input.getWidth(); // Image width for calculating the pixel index
 
-	return data[y*width+x];             // Wert des Pixel zurueckgeben
+	return data[y*width+x];             // Return the value of the pixel
 }
 void zeros(GrayImage& f)
 {
